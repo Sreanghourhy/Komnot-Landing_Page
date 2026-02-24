@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,10 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --border: 214.3 31.8% 91.4%;
 
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -21,18 +24,11 @@
     --secondary: 220 65% 35%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 215 16% 47%;
-
     --accent: 220 14% 96%;
     --accent-foreground: 222 47% 11%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 64% 33%;
 
     --radius: 0.75rem;
 
@@ -66,9 +62,14 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
     color: hsl(var(--navy-dark));
   }
@@ -77,18 +78,36 @@
 @layer utilities {
   .text-gradient-navy {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-deep)));
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--navy)),
+      hsl(var(--navy-deep))
+    );
   }
   .bg-grid {
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
     background-size: 60px 60px;
   }
   .bg-hero-gradient {
-    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--surface)) 100%);
+    background: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--surface)) 100%
+    );
   }
   .shadow-navy {
     box-shadow: 0 4px 24px -4px hsl(var(--navy) / 0.2);
+  }
+}
+
+@layer base {
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --border: 217.2 32.6% 17.5%;
   }
 }

@@ -3,15 +3,15 @@ import { Shield, CheckCircle, Zap, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-illustration.png";
 
-const stats = [
-  { value: "95%", label: "Accuracy" },
-  { value: "3s", label: "Verification" },
-  { value: "50,000+", label: "Scams Blocked" },
-];
+// const stats = [
+//   { value: "95%", label: "Accuracy" },
+//   { value: "3s", label: "Verification" },
+//   { value: "50,000+", label: "Scams Blocked" },
+// ];
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-hero-gradient">
+    <section className="relative pt-16 pb-12 md:pt-24 md:pb-16 overflow-hidden bg-hero-gradient">
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
 
@@ -23,7 +23,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-8"
         >
-          <div className="inline-flex items-center gap-4 md:gap-6 px-5 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm text-sm">
+          {/* <div className="inline-flex items-center gap-4 md:gap-6 px-5 py-2.5 rounded-full border border-border bg-background/80 backdrop-blur-sm text-sm">
             {stats.map((s, i) => (
               <span key={i} className="flex items-center gap-1.5">
                 <span className="font-bold text-foreground">{s.value}</span>
@@ -31,7 +31,7 @@ const HeroSection = () => {
                 {i < stats.length - 1 && <span className="text-border ml-3">|</span>}
               </span>
             ))}
-          </div>
+          </div> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -55,17 +55,11 @@ const HeroSection = () => {
                 <Button size="lg" className="w-full sm:w-auto text-base px-8 shadow-navy" asChild>
                   <a href="#pricing">Get Started Free</a>
                 </Button>
-                <p className="text-xs text-muted-foreground mt-2 text-center sm:text-left">
-                  For individuals — 10 checks/day, no credit card
-                </p>
               </div>
               <div>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto text-base px-8" asChild>
                   <a href="#pricing">Request Business Demo</a>
                 </Button>
-                <p className="text-xs text-muted-foreground mt-2 text-center sm:text-left">
-                  For teams and enterprises
-                </p>
               </div>
             </div>
           </motion.div>

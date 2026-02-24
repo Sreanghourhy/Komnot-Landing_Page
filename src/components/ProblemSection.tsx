@@ -35,7 +35,7 @@ const fadeUp = {
 
 const ProblemSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section className="py-4 md:py-8 bg-surface">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,13 +73,6 @@ const ProblemSection = () => {
             </motion.div>
           ))}
         </div>
-
-        <p className="text-xs text-muted-foreground text-center">
-          Sources:{" "}
-          <span className="underline decoration-dotted cursor-pointer">[Citation 1]</span>{" "}
-          <span className="underline decoration-dotted cursor-pointer">[Citation 2]</span>{" "}
-          <span className="underline decoration-dotted cursor-pointer">[Citation 3]</span>
-        </p>
       </div>
     </section>
   );

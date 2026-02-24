@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Shield, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import komnotLogo from "@/assets/komnot-logo.png";
+import komnotLogo from "@/assets/Black.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
