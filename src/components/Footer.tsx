@@ -36,7 +36,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-foreground text-background/80 py-16">
+    <footer className="bg-gray-900 dark:bg-[#0B0E14] text-gray-100 py-16 border-t border-gray-800 dark:border-gray-800/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-5 gap-10 mb-12">
           {/* Brand */}
@@ -47,25 +47,25 @@ const Footer = () => {
                 alt="Komnot"
                 className="h-8 w-8 invert brightness-200"
               />
-              <span className="text-xl font-bold text-background">Komnot</span>
+              <span className="text-xl font-bold text-white">Komnot</span>
             </div>
-            <p className="text-sm text-background/60 mb-6 max-w-xs leading-relaxed">
+            <p className="text-sm text-gray-300 dark:text-gray-400 mb-6 max-w-xs leading-relaxed">
               Think Before You Click. Protecting Cambodians and businesses from
               online scams with instant AI detection.
             </p>
             {/* Newsletter */}
-            <p className="text-xs font-semibold text-background/80 mb-2">
+            <p className="text-xs font-semibold text-gray-200 dark:text-gray-300 mb-2">
               Stay updated on scam alerts
             </p>
             <div className="flex gap-2">
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="px-3 py-2 rounded-lg bg-background/10 border border-background/20 text-background text-sm placeholder:text-background/40 focus:outline-none focus:ring-1 focus:ring-background/30 w-full max-w-[200px]"
+                className="px-3 py-2 rounded-lg bg-gray-800 dark:bg-gray-900/50 border border-gray-700 dark:border-gray-800 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-600 dark:focus:ring-gray-700 w-full max-w-[200px]"
               />
               <Button
                 size="sm"
-                className="bg-background/20 hover:bg-background/30 text-background border-0"
+                className="bg-gray-700 hover:bg-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700 text-white border-0"
               >
                 Subscribe
               </Button>
@@ -75,16 +75,14 @@ const Footer = () => {
           {/* Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="text-sm font-semibold text-background mb-4">
-                {title}
-              </h4>
+              <h4 className="text-sm font-semibold text-white mb-4">{title}</h4>
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
                       onClick={(e) => handleClick(e, link.href)}
-                      className="text-sm text-background/60 hover:text-background transition-colors"
+                      className="text-sm text-gray-400 hover:text-white transition-colors"
                     >
                       {link.name}
                     </a>
@@ -95,8 +93,8 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="border-t border-background/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-background/50">
+        <div className="border-t border-gray-800 dark:border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-gray-500 dark:text-gray-600">
             © 2026 Komnot. Made in Cambodia 🇰🇭
           </p>
           <div className="flex gap-4">
@@ -104,7 +102,7 @@ const Footer = () => {
               <a
                 key={s}
                 href="#"
-                className="text-xs text-background/50 hover:text-background transition-colors"
+                className="text-xs text-gray-500 dark:text-gray-600 hover:text-white transition-colors"
               >
                 {s}
               </a>

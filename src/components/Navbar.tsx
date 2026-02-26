@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { Shield, Menu, X } from "lucide-react";
+import { Shield, Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 import komnotLogo from "@/assets/Black.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -68,6 +70,16 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="h-9 w-9"
+          >
+            <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+          </Button>
           <Button variant="ghost" size="sm" asChild>
             <a href="#pricing" onClick={(e) => handleClick(e, "#pricing")}>
               Sign In
@@ -106,11 +118,23 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button size="sm" className="w-full mt-3" asChild>
-            <a href="#pricing" onClick={(e) => handleClick(e, "#pricing")}>
-              Get Started Free
-            </a>
-          </Button>
+          <div className="flex items-center gap-2 mt-3">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="h-9 w-9"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+            <Button size="sm" className="flex-1" asChild>
+              <a href="#pricing" onClick={(e) => handleClick(e, "#pricing")}>
+                Get Started Free
+              </a>
+            </Button>
+          </div>
         </div>
       )}
     </nav>
