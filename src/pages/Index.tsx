@@ -6,6 +6,8 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
+import PartnersSection from "@/components/PartnersSection";
+import TeamSection from "@/components/TeamSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -19,9 +21,12 @@ const Index = () => {
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
+      <PartnersSection />
+      <TeamSection />
       <Footer />
     </div>
   );
 };
 
 export default Index;
+
